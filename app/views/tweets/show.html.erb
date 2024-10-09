@@ -1,0 +1,16 @@
+<h1>ツイート詳細</h1>
+
+<p>
+  <strong>本文:</strong>
+  <%= @tweet.message %>  <!-- メッセージ表示 -->
+</p>
+
+<p>
+  <strong>投稿時間:</strong>
+  <%= time_ago_in_words(@tweet.tdate) %>前  <!-- 経過時間表示 -->
+</p>
+
+<%= link_to '戻る', tweets_path %> |  <!-- 戻る -->
+<%= link_to '編集', edit_tweet_path(@tweet) %>  <!-- 編集 -->
+
+<%= flash[:notice] %>

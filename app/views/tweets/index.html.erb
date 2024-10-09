@@ -1,0 +1,17 @@
+<h1>全ツイート一覧</h1>
+
+<%= link_to '新規ツイート作成', new_tweet_path %>  <!-- 新規作成 -->
+
+<ul>
+  <% @tweets.each do |tweet| %>  <!-- 各ツイートをリスト表示 -->
+    <li>
+      <strong><%= time_ago_in_words(tweet.tdate) %>前:</strong>  <!-- ツイート経過時間 -->
+      <%= tweet.message %> 
+      <%= link_to '詳細', tweet_path(tweet) %> |  <!-- 詳細 -->
+      <%= link_to '編集', edit_tweet_path(tweet) %> |  <!-- 編集 -->
+      <%= link_to '削除', "/tweets/#{tweet.id}", data: {turbo_method: :delete} %>
+    </li>
+  <% end %>
+</ul>
+
+<%= flash[:notice] %>

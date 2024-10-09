@@ -1,0 +1,25 @@
+<h1>新規ツイート</h1>
+
+<%= form_with model: @tweet, data: { turbo: false } do |form| %>  <!-- 新規ツイートのフォーム -->
+  <div>
+    <%= form.label :message %><br>
+    <%= form.text_area :message %>  <!-- メッセージ入力フィールド -->
+  </div>
+
+  <div>
+    <%= form.submit "ツイートを作成" %>  <!-- 送信 -->
+  </div>
+<% end %>
+
+<%= link_to '戻る', tweets_path %>  <!-- 戻る -->
+
+<% if @tweet.errors.any? %>  <!-- エラーメッセージ表示 -->
+  <div id="error_explanation">
+    <h2><%= pluralize(@tweet.errors.count, "エラー") %>が発生しました:</h2>
+    <ul>
+      <% @tweet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
