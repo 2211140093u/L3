@@ -11,6 +11,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="container">
+      <div id="sidebar">
+        <%= render "tweets/sidebar" %>
+      </div>
+      <div id="content">
+        <div id="header">
+          <%= render "tweets/header" %>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
   </body>
+
 </html>

@@ -1,15 +1,111 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* ベースのスタイルリセット */
+body, ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: Arial, sans-serif;
+}
+
+#container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* サイドバーのスタイル */
+#sidebar {
+  width: 250px;
+  padding: 20px;
+  background-color: #f5f8fa;
+  border-right: 1px solid #e1e8ed;
+}
+
+#sidebar ul {
+  padding: 0;
+}
+
+#sidebar li {
+  margin: 15px 0;
+}
+
+#sidebar li a {
+  color: #333;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 30px;
+  transition: background-color 0.2s;
+}
+
+#sidebar li a:hover {
+  background-color: #e8f5fd;
+}
+
+#sidebar .tweet-button {
+  background-color: #1da1f2;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* ヘッダーのスタイル */
+#header {
+  width: 100%;
+  padding: 15px 30px; /* 左右に余白を追加 */
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e8ed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; /* 要素間のスペースを増やす */
+}
+
+/* ヘッダー内のリンクやボタンのスタイル */
+#header a {
+  color: #1da1f2;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
+#header a:hover {
+  background-color: #e8f5fd;
+  border-radius: 5px;
+}
+
+/* コンテンツ（ツイート一覧）のスタイル */
+#content {
+  flex: 1;
+  padding: 20px;
+}
+
+.tweet {
+  border-bottom: 1px solid #e1e8ed;
+  padding: 15px 0;
+}
+
+.tweet strong {
+  color: #555;
+  font-size: 14px;
+}
+
+.tweet p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.tweet .actions a {
+  font-size: 14px;
+  color: #1da1f2;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.tweet .actions a:hover {
+  text-decoration: underline;
+}
